@@ -1,0 +1,21 @@
+{
+  "name": "offline-html-games-pack",
+  "version": "1.0.0",
+  "description": "A repo filled with 300 offline games that can each run on a single file. This is a good option if you are having internet connectivity issues, or you're at some place with restricted internet.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "node scripts/generate-games-config.js && next build",
+    "start": "next start",
+    "export": "next build && next export",
+    "generate-config": "node scripts/generate-games-config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}
