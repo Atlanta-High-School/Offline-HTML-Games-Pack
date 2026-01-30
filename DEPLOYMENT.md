@@ -88,6 +88,14 @@ npm run build
 
 ### Build Settings
 
+**For Vercel (Recommended):**
+- **Auto-detection**: Let Vercel auto-detect Next.js for optimal performance
+- Vercel will automatically use the `build` script from `package.json`
+- Build cache is automatically enabled when using auto-detection
+- No manual configuration needed in `vercel.json` for build commands
+
+**For Other Platforms:**
+
 **Build Command:**
 ```bash
 npm run build
@@ -139,6 +147,13 @@ Follow your hosting provider's documentation for custom domain setup.
 
 **Error: "Out of memory"**
 - Increase Node memory: `NODE_OPTIONS="--max-old-space-size=4096" npm run build`
+
+**Issue: "No build cache" repeating on Vercel**
+- This issue occurs when custom build commands in `vercel.json` prevent Vercel from using its optimized caching
+- **Solution**: Remove `buildCommand`, `outputDirectory`, and other build-related settings from `vercel.json`
+- Let Vercel auto-detect Next.js - it will use the `build` script from `package.json` automatically
+- Vercel will then properly cache the `.next` directory between builds
+- After fixing, redeploy and builds should be much faster with proper caching
 
 ### Games Not Loading
 
